@@ -43,8 +43,11 @@ class Book
     
     //Refnumber Methods
     public void setRefNumber(String ref){
-        refNumber = ref;
-        
+        if(ref.length()<=3){
+            refNumber = ref;
+    }   else{
+            System.out.println("Error- reference number must be 3 characters");
+    }
     }
     
     
@@ -59,5 +62,11 @@ class Book
         System.out.println("Title " + title);
         System.out.println("Author " + author);
         System.out.println("Pages " + numPages);
+        System.out.println("Ref Number = " + refNumber);
+        
+        if(refNumber.length() > 0)
+            System.out.println("Reference Number = " + refNumber);
+        else
+            System.out.println("Reference Number = ZZZ ");
     }
 }
